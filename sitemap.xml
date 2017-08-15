@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://codesnipps.simolation.de/post/android/create-circular-reveal-animation-when-starting-activitys/</loc>
+    <lastmod>2017-08-15T21:28:56+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://codesnipps.simolation.de/post/android/volley-set-headers/</loc>
     <lastmod>2017-08-15T20:56:32+02:00</lastmod>
   </url>
@@ -29,13 +34,13 @@
   
   <url>
     <loc>http://codesnipps.simolation.de/</loc>
-    <lastmod>2017-08-15T20:56:32+02:00</lastmod>
+    <lastmod>2017-08-15T21:28:56+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://codesnipps.simolation.de/post/</loc>
-    <lastmod>2017-08-15T20:56:32+02:00</lastmod>
+    <lastmod>2017-08-15T21:28:56+02:00</lastmod>
     <priority>0</priority>
   </url>
   
