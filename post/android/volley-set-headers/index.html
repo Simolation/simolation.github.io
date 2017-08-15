@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="generator" content="Hugo 0.26" />
+<title>Volley Set Headers</title>
+<link rel="shortcut icon" href="http://codesnipps.simolation.de/images/favicon.png">
+<link rel="stylesheet" href="http://codesnipps.simolation.de/css/style.css">
+<link rel="stylesheet" href="http://codesnipps.simolation.de/css/highlight.css">
+
+
+
+<link rel="stylesheet" href="http://codesnipps.simolation.de/css/monosocialiconsfont.css">
+
+
+
+
+<meta property="og:title" content="Volley Set Headers" />
+<meta property="og:description" content="If you are using volley for android as described in this post, you might have to set headers to get the wanted response from your server.
+Therefore you just have to add after the wanted request an Map, that returns the desired headers:
+JsonObjectRequest jsonObjectRequest = new JsonObjectRequest( ... ) { @Override public Map&lt;String, String&gt; getHeaders() { Map&lt;String, String&gt; params = new HashMap&lt;String, String&gt;(); params.put(&quot;x-vacationtoken&quot;, &quot;secret_token&quot;); params.put(&quot;content-type&quot;, &quot;application/json&quot;); return params; } };  Code Example String url = &quot;http://httpbin." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://codesnipps.simolation.de/post/android/volley-set-headers/" />
+
+
+
+<meta property="article:published_time" content="2017-08-15T20:56:32&#43;02:00"/>
+<meta property="article:modified_time" content="2017-08-15T20:56:32&#43;02:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Volley Set Headers">
+<meta itemprop="description" content="If you are using volley for android as described in this post, you might have to set headers to get the wanted response from your server.
+Therefore you just have to add after the wanted request an Map, that returns the desired headers:
+JsonObjectRequest jsonObjectRequest = new JsonObjectRequest( ... ) { @Override public Map&lt;String, String&gt; getHeaders() { Map&lt;String, String&gt; params = new HashMap&lt;String, String&gt;(); params.put(&quot;x-vacationtoken&quot;, &quot;secret_token&quot;); params.put(&quot;content-type&quot;, &quot;application/json&quot;); return params; } };  Code Example String url = &quot;http://httpbin.">
+
+
+<meta itemprop="dateModified" content="2017-08-15T20:56:32&#43;02:00" />
+<meta itemprop="wordCount" content="191">
+
+
+
+<meta itemprop="keywords" content="" />
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Volley Set Headers"/>
+<meta name="twitter:description" content="If you are using volley for android as described in this post, you might have to set headers to get the wanted response from your server.
+Therefore you just have to add after the wanted request an Map, that returns the desired headers:
+JsonObjectRequest jsonObjectRequest = new JsonObjectRequest( ... ) { @Override public Map&lt;String, String&gt; getHeaders() { Map&lt;String, String&gt; params = new HashMap&lt;String, String&gt;(); params.put(&quot;x-vacationtoken&quot;, &quot;secret_token&quot;); params.put(&quot;content-type&quot;, &quot;application/json&quot;); return params; } };  Code Example String url = &quot;http://httpbin."/>
+
+
+    </head>
+<body>
+    <nav class="main-nav">
+	
+		<a href='http://codesnipps.simolation.de/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+
+	
+</nav>
+
+    <section id="wrapper">
+        
+        
+<article class="post">
+    <header>
+        <h1>Volley Set Headers</h1>
+        <h2 class="headline">
+        August 15, 2017
+        <br>
+        
+        </h2>
+    </header>
+    <section id="post-body">
+        
+
+<p>If you are using volley for android as described in <a href="../get-started-with-volley/">this post</a>, you might have to set headers to get the wanted response from your server.</p>
+
+<p>Therefore you just have to add after the wanted request an <code>Map</code>, that returns the desired headers:</p>
+
+<pre><code class="language-java">JsonObjectRequest jsonObjectRequest = new JsonObjectRequest( ... ) {
+    @Override
+    public Map&lt;String, String&gt; getHeaders() {
+        Map&lt;String, String&gt; params = new HashMap&lt;String, String&gt;();
+        params.put(&quot;x-vacationtoken&quot;, &quot;secret_token&quot;);
+        params.put(&quot;content-type&quot;, &quot;application/json&quot;);
+        return params;
+    }
+};
+</code></pre>
+
+<h1 id="code-example">Code Example</h1>
+
+<pre><code class="language-java">String url = &quot;http://httpbin.org/post&quot;;
+
+//create post data as JSONObject - if your are using JSONArrayRequest use obviously an JSONArray :)
+JSONObject jsonBody = new JSONObject(&quot;{\&quot;message\&quot;: \&quot;Hello\&quot;}&quot;);
+ 
+//request a json object response
+JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.POST, url, jsonBody, new Response.Listener&lt;JSONObject&gt;() {
+    @Override
+    public void onResponse(JSONObject response) {
+ 
+        //now handle the response
+        Toast.makeText(MainActivity.this, response, Toast.LENGTH_SHORT).show();
+ 
+    }
+}, new Response.ErrorListener() {
+    @Override
+    public void onErrorResponse(VolleyError error) {
+         
+        //handle the error
+        Toast.makeText(MainActivity.this, &quot;An error occurred&quot;, Toast.LENGTH_SHORT).show();
+        error.printStackTrace();
+ 
+    }
+}) {    //this is the part, that adds the header to the request
+    @Override
+    public Map&lt;String, String&gt; getHeaders() {
+        Map&lt;String, String&gt; params = new HashMap&lt;String, String&gt;();
+        params.put(&quot;x-vacationtoken&quot;, &quot;secret_token&quot;);
+        params.put(&quot;content-type&quot;, &quot;application/json&quot;);
+        return params;
+    }
+};
+ 
+// Add the request to the queue
+Volley.newRequestQueue(this).add(jsonRequest);
+</code></pre>
+
+    </section>
+</article>
+
+<footer id="post-meta" class="clearfix">
+    
+    <img class="avatar" src="http://codesnipps.simolation.de/images/avatar.png">
+    <div>
+        <span class="dark"></span>
+        <span></span>
+    </div>
+    
+    <section id="sharing">
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fcodesnipps.simolation.de%2fpost%2fandroid%2fvolley-set-headers%2f - Volley%20Set%20Headers "><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+    </section>
+</footer>
+
+
+
+<ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+
+    
+    
+    
+        <li>
+            <a href="/post/android/get-started-with-volley/">Android: Get Started With Volley<aside class="dates">Aug 15 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/post/android/hide-and-show-keyboard/">Android: Programmatically hide and show the keyboard<aside class="dates">Aug 15 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/post/android/datepicker/">Android: Select date with DatePickerDialog<aside class="dates">Aug 14 2017</aside></a>
+        </li>
+    
+</ul>
+
+
+
+        <footer id="footer">
+    
+    <p class="small">
+    
+        © Copyright 2017 
+    
+    </p>
+</footer>
+
+    </section>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://codesnipps.simolation.de/js/main.js"></script>
+<script src="http://codesnipps.simolation.de/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+</body>
+</html>
