@@ -13,10 +13,10 @@
     
     <item>
       <title>Android: Select date with DatePickerDialog</title>
-      <link>http://codesnipps.simolation.de/post/android/android-/</link>
+      <link>http://codesnipps.simolation.de/post/android/datepicker/</link>
       <pubDate>Mon, 14 Aug 2017 23:05:47 +0200</pubDate>
       
-      <guid>http://codesnipps.simolation.de/post/android/android-/</guid>
+      <guid>http://codesnipps.simolation.de/post/android/datepicker/</guid>
       <description>With androids date picker you can easily choose a date without much code.
 Guide How To 1.Add latest appcompat library to your &amp;ldquo;build.gradle&amp;rdquo;.
 dependencies { compile &#39;com.android.support:appcompat-v7:26.+&#39; // set exact version here }  2.Make sure, that your activity extends &amp;ldquo;android.support.v7.app.AppCompatActivity&amp;rdquo;.
