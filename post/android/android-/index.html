@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="generator" content="Hugo 0.26" />
+<title>Android: Select date with DatePickerDialog</title>
+<link rel="shortcut icon" href="http://codesnipps.simolation.de/images/favicon.png">
+<link rel="stylesheet" href="http://codesnipps.simolation.de/css/style.css">
+<link rel="stylesheet" href="http://codesnipps.simolation.de/css/highlight.css">
+
+
+
+<link rel="stylesheet" href="http://codesnipps.simolation.de/css/monosocialiconsfont.css">
+
+
+
+
+<meta property="og:title" content="Android: Select date with DatePickerDialog" />
+<meta property="og:description" content="With androids date picker you can easily choose a date without much code.
+Guide How To 1.Add latest appcompat library to your &ldquo;build.gradle&rdquo;.
+dependencies { compile &#39;com.android.support:appcompat-v7:26.&#43;&#39; // set exact version here }  2.Make sure, that your activity extends &ldquo;android.support.v7.app.AppCompatActivity&rdquo;.
+public class MainActivity extends AppCompatActivity { ... }  3.Create your DatePickerDialog and set a context, a listener and the start year, month and day.
+DatePickerDialog datePickerDialog = new DatePickerDialog( context, listener, startYear, starthMonth, startDay);  4." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://codesnipps.simolation.de/post/android/android-/" />
+
+
+
+<meta property="article:published_time" content="2017-08-14T23:05:47&#43;02:00"/>
+<meta property="article:modified_time" content="2017-08-14T23:05:47&#43;02:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Android: Select date with DatePickerDialog">
+<meta itemprop="description" content="With androids date picker you can easily choose a date without much code.
+Guide How To 1.Add latest appcompat library to your &ldquo;build.gradle&rdquo;.
+dependencies { compile &#39;com.android.support:appcompat-v7:26.&#43;&#39; // set exact version here }  2.Make sure, that your activity extends &ldquo;android.support.v7.app.AppCompatActivity&rdquo;.
+public class MainActivity extends AppCompatActivity { ... }  3.Create your DatePickerDialog and set a context, a listener and the start year, month and day.
+DatePickerDialog datePickerDialog = new DatePickerDialog( context, listener, startYear, starthMonth, startDay);  4.">
+
+
+<meta itemprop="dateModified" content="2017-08-14T23:05:47&#43;02:00" />
+<meta itemprop="wordCount" content="235">
+
+
+
+<meta itemprop="keywords" content="" />
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Android: Select date with DatePickerDialog"/>
+<meta name="twitter:description" content="With androids date picker you can easily choose a date without much code.
+Guide How To 1.Add latest appcompat library to your &ldquo;build.gradle&rdquo;.
+dependencies { compile &#39;com.android.support:appcompat-v7:26.&#43;&#39; // set exact version here }  2.Make sure, that your activity extends &ldquo;android.support.v7.app.AppCompatActivity&rdquo;.
+public class MainActivity extends AppCompatActivity { ... }  3.Create your DatePickerDialog and set a context, a listener and the start year, month and day.
+DatePickerDialog datePickerDialog = new DatePickerDialog( context, listener, startYear, starthMonth, startDay);  4."/>
+
+
+    </head>
+<body>
+    <nav class="main-nav">
+	
+		<a href='http://codesnipps.simolation.de/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+
+	
+</nav>
+
+    <section id="wrapper">
+        
+        
+<article class="post">
+    <header>
+        <h1>Android: Select date with DatePickerDialog</h1>
+        <h2 class="headline">
+        August 14, 2017
+        <br>
+        
+        </h2>
+    </header>
+    <section id="post-body">
+        
+
+<p>With androids date picker you can easily choose a date without much code.</p>
+
+<h1 id="guide-how-to">Guide How To</h1>
+
+<p>1.Add latest appcompat library to your &ldquo;build.gradle&rdquo;.</p>
+
+<pre><code class="language-java">dependencies {
+    compile 'com.android.support:appcompat-v7:26.+' // set exact version here
+}
+</code></pre>
+
+<p>2.Make sure, that your activity extends &ldquo;android.support.v7.app.AppCompatActivity&rdquo;.</p>
+
+<pre><code class="language-java">public class MainActivity extends AppCompatActivity { ... }
+</code></pre>
+
+<p>3.Create your DatePickerDialog and set a context, a listener and the start year, month and day.</p>
+
+<pre><code class="language-java">DatePickerDialog datePickerDialog = new DatePickerDialog(
+                        context, 
+                        listener, 
+                        startYear, 
+                        starthMonth, 
+                        startDay);
+</code></pre>
+
+<p>4.Optional: Advanced options for your date picker</p>
+
+<pre><code class="language-java">DatePicker datePicker = datePickerDialog.getDatePicker();
+
+//set minimum date to select
+datePicker.setMinDate(long minDate);
+
+//set maximum date to select
+datePicker.setMaxDate(long maxDate);
+
+//set the first day of a week
+datePicker.setFirstDayOfWeek(int firstDayOfWeek)
+
+//update the current date
+datePicker.updateDate(int year, int month, int day);
+</code></pre>
+
+<p>5.Show your date picker using the show() method.</p>
+
+<pre><code class="language-java">datePickerDialog.show()
+</code></pre>
+
+<h1 id="code-example">Code Example</h1>
+
+<pre><code class="language-java">//create an datePickerListener to get the selected date. Needs to be done, before creating the date picker
+private DatePickerDialog.OnDateSetListener dateListener = new DatePickerDialog.OnDateSetListener() {
+    @Override
+    public void onDateSet(DatePicker view, int Year, int Month, int Day) {
+        //Year is now the selected year
+        //Month + 1 is the selected month. Note: add 1, because months starts from 0 in android
+        //Day is the selected day
+    }
+};
+
+//init calendar to get the current year, month and day
+Calendar cal = Calendar.getInstance();
+
+//creating the DatePickerDialog
+DatePickerDialog dialog = new DatePickerDialog(MainActivity.this, 
+                        dateListener,   //set the listener
+                        cal.get(Calendar.YEAR), 
+                        cal.get(Calendar.MONTH), 
+                        cal.get(Calendar.DAY_OF_MONTH));
+
+//optional set starting day (from today)
+dialog.getDatePicker().setMinDate(new Date().getTime());
+
+//show picker
+dialog.show();
+</code></pre>
+
+    </section>
+</article>
+
+<footer id="post-meta" class="clearfix">
+    
+    <img class="avatar" src="http://codesnipps.simolation.de/images/avatar.png">
+    <div>
+        <span class="dark"></span>
+        <span></span>
+    </div>
+    
+    <section id="sharing">
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fcodesnipps.simolation.de%2fpost%2fandroid%2fandroid-%2f - Android%3a%20Select%20date%20with%20DatePickerDialog "><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+    </section>
+</footer>
+
+
+
+<ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+
+    
+    
+    
+</ul>
+
+
+
+        <footer id="footer">
+    
+    <p class="small">
+    
+        © Copyright 2017 
+    
+    </p>
+</footer>
+
+    </section>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://codesnipps.simolation.de/js/main.js"></script>
+<script src="http://codesnipps.simolation.de/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+</body>
+</html>
