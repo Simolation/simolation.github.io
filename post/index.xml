@@ -6,10 +6,21 @@
     <description>Recent content in Posts on CodeSnipps</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de</language>
-    <lastBuildDate>Tue, 15 Aug 2017 12:16:14 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 15 Aug 2017 13:26:38 +0200</lastBuildDate>
     
 	<atom:link href="http://codesnipps.simolation.de/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Android: Get Started With Volley</title>
+      <link>http://codesnipps.simolation.de/post/android/get-started-with-volley/</link>
+      <pubDate>Tue, 15 Aug 2017 13:26:38 +0200</pubDate>
+      
+      <guid>http://codesnipps.simolation.de/post/android/get-started-with-volley/</guid>
+      <description>In android it is very useful to make network requests to mostly interact with an api. There are many ways to achieve that, but the simplest way - that is also recommended by Google - is the library volley.
+Get Started At first you have to add the volley library to your build.gradle
+dependencies { ... compile &#39;com.android.volley:volley:1.0.0&#39; }  Next you have to add the Internet permission to your AndroidManifest.</description>
+    </item>
     
     <item>
       <title>Android: Programmatically hide and show the keyboard</title>
@@ -29,8 +40,8 @@ Open soft keyboard When you click on a button you can focus an editText and open
       
       <guid>http://codesnipps.simolation.de/post/android/datepicker/</guid>
       <description>With androids date picker you can easily choose a date without much code.
-Guide How To 1.Add latest appcompat library to your &amp;ldquo;build.gradle&amp;rdquo;.
-dependencies { compile &#39;com.android.support:appcompat-v7:26.+&#39; // set exact version here }  2.Make sure, that your activity extends &amp;ldquo;android.support.v7.app.AppCompatActivity&amp;rdquo;.
+Guide How To 1.Add latest appcompat library to your build.gradle.
+dependencies { ... compile &#39;com.android.support:appcompat-v7:26.+&#39; // set exact version here }  2.Make sure, that your activity extends android.support.v7.app.AppCompatActivity.
 public class MainActivity extends AppCompatActivity { ... }  3.Create your DatePickerDialog and set a context, a listener and the start year, month and day.
 DatePickerDialog datePickerDialog = new DatePickerDialog( context, listener, startYear, starthMonth, startDay);  4.</description>
     </item>
