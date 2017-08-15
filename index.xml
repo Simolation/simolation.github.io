@@ -6,10 +6,20 @@
     <description>Recent content on CodeSnipps</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de</language>
-    <lastBuildDate>Mon, 14 Aug 2017 23:05:47 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 15 Aug 2017 12:16:14 +0200</lastBuildDate>
     
 	<atom:link href="http://codesnipps.simolation.de/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Android: Programmatically hide and show the keyboard</title>
+      <link>http://codesnipps.simolation.de/post/android/hide-and-show-keyboard/</link>
+      <pubDate>Tue, 15 Aug 2017 12:16:14 +0200</pubDate>
+      
+      <guid>http://codesnipps.simolation.de/post/android/hide-and-show-keyboard/</guid>
+      <description> Sometimes you might want to programmatically close or also open the soft keyboard in your app.
+Open soft keyboard //Get EditText instance EditText editText = (EditText) findViewById(R.id.edit_text); InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE); imm.showSoftInput(editText, InputMethodManager.SHOW_IMPLICIT);  </description>
+    </item>
     
     <item>
       <title>Android: Select date with DatePickerDialog</title>
