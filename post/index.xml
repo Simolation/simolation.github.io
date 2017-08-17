@@ -18,9 +18,9 @@
       
       <guid>http://codesnipps.simolation.de/post/android/shared-transitions/</guid>
       <description>In android you can make cool animations, that let objects move into another activity. For that you should use shared transitions.
-Get started To start you have to add to your view the tag android:transitionName=&amp;ldquo;transition_name&amp;rdquo;
+Get started To start you have to add this tag android:transitionName=&amp;ldquo;transition_name&amp;rdquo; to your view, that is going to move. Chose an unique name for the transition, else it won&amp;rsquo;t work.
 &amp;lt;ImageView android:id=&amp;quot;@+id/image&amp;quot; android:layout_width=&amp;quot;40dp&amp;quot; android:layout_height=&amp;quot;40dp&amp;quot; android:transitionName=&amp;quot;transition_image&amp;quot; android:src=&amp;quot;@drawable/avatar&amp;quot; /&amp;gt;  Now you can go on with your activity.
-Intent intent = new Intent(MainActivity.this, SecondActivity.class); ImageView imageView = findViewById(R.id.image); ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, (View) imageView, //put here the view, that should be shared &amp;quot;transition_image&amp;quot;); //this has to be the string, you set at the transitionName tag //start the activity with the options as bundle startActivity(intent, options.</description>
+Intent intent = new Intent(MainActivity.</description>
     </item>
     
     <item>
