@@ -66,7 +66,7 @@ Intent intent = new Intent(MainActivity.">
 
 
 <meta itemprop="dateModified" content="2017-08-17T22:14:52&#43;02:00" />
-<meta itemprop="wordCount" content="297">
+<meta itemprop="wordCount" content="307">
 
 
 
@@ -150,6 +150,7 @@ supportPostponeEnterTransition();
 Glide
     .with( SecondActivity.this )
     .load( url )
+    .diskCacheStrategy(DiskCacheStrategy.SOURCE) //cache the image, to reduce the time to wait
     .dontAnimate() //make sure, there is no animation on the image
     .listener(new RequestListener&lt;String, GlideDrawable&gt;() {
         @Override
