@@ -6,10 +6,22 @@
     <description>Recent content on CodeSnipps</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de</language>
-    <lastBuildDate>Tue, 15 Aug 2017 21:28:56 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 17 Aug 2017 22:14:52 +0200</lastBuildDate>
     
 	<atom:link href="http://codesnipps.simolation.de/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Android: Shared transitions</title>
+      <link>http://codesnipps.simolation.de/post/android/shared-transitions/</link>
+      <pubDate>Thu, 17 Aug 2017 22:14:52 +0200</pubDate>
+      
+      <guid>http://codesnipps.simolation.de/post/android/shared-transitions/</guid>
+      <description>In android you can make cool animations, that let objects move into another activity. For that you should use shared transitions.
+Get started To start you have to add to your view the tag android:transitionName=&amp;ldquo;transition_name&amp;rdquo;
+&amp;lt;ImageView android:id=&amp;quot;@+id/image&amp;quot; android:layout_width=&amp;quot;40dp&amp;quot; android:layout_height=&amp;quot;40dp&amp;quot; android:transitionName=&amp;quot;transition_image&amp;quot; android:src=&amp;quot;@drawable/avatar&amp;quot; /&amp;gt;  Now you can go on with your activity.
+Intent intent = new Intent(MainActivity.this, SecondActivity.class); ImageView imageView = findViewById(R.id.image); ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, (View) imageView, //put here the view, that should be shared &amp;quot;transition_image&amp;quot;); //this has to be the string, you set at the transitionName tag //start the activity with the options as bundle startActivity(intent, options.</description>
+    </item>
     
     <item>
       <title>Android: Create circular reveal animation, when starting activitys</title>
