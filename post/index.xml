@@ -6,10 +6,20 @@
     <description>Recent content in Posts on CodeSnipps</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de</language>
-    <lastBuildDate>Thu, 17 Aug 2017 22:14:52 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 15 Oct 2017 17:49:50 +0200</lastBuildDate>
     
 	<atom:link href="http://codesnipps.simolation.de/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PHP: Create Thumbnails on the Fly</title>
+      <link>http://codesnipps.simolation.de/post/php/create-thumbnails-on-the-fly/</link>
+      <pubDate>Sun, 15 Oct 2017 17:49:50 +0200</pubDate>
+      
+      <guid>http://codesnipps.simolation.de/post/php/create-thumbnails-on-the-fly/</guid>
+      <description>Sometimes it might be usefull, to create thumbnails on your server. Most of the time you have your images right on your server, but when you want to handle an image from an url it becomes more difficult. Here is how you can create a thumbnail directly from an url and display it.
+For that you can use this Thumbnail function. You can pass an url, the width + height of the final image and if you provide a filename it will be saved as a file, otherways the image will be returned so you can easily display it.</description>
+    </item>
     
     <item>
       <title>Android: Shared transitions</title>

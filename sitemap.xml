@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://codesnipps.simolation.de/post/php/create-thumbnails-on-the-fly/</loc>
+    <lastmod>2017-10-15T17:49:50+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://codesnipps.simolation.de/post/android/shared-transitions/</loc>
     <lastmod>2017-08-17T22:14:52+02:00</lastmod>
   </url>
@@ -39,13 +44,13 @@
   
   <url>
     <loc>http://codesnipps.simolation.de/</loc>
-    <lastmod>2017-08-17T22:14:52+02:00</lastmod>
+    <lastmod>2017-10-15T17:49:50+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://codesnipps.simolation.de/post/</loc>
-    <lastmod>2017-08-17T22:14:52+02:00</lastmod>
+    <lastmod>2017-10-15T17:49:50+02:00</lastmod>
     <priority>0</priority>
   </url>
   
