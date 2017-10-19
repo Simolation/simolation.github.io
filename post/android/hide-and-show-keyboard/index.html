@@ -12,6 +12,24 @@
 <meta name="google-site-verification" content="kEAoZ3boC_qgbmORSHeuIFpBqileSNVVKU-vb97IDBM" />
 
 <script>
+	if(window.location.search.replace("?", "") == "optOut") {
+		optOut();
+	}
+	if(window.location.search.replace("?", "") == "optIn") {
+		optIn();
+	}
+
+	function optOut() {
+        document.cookie = 'OptOut=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+        alert("Du wurdest von sämtlichem Tracking auf dieser Seite ausgeschlossen");
+    }
+
+    
+    function optIn() {
+        document.cookie = 'OptOut=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+        alert("Du wirst wieder getrackt");
+    }
+
   if (!(document.cookie.indexOf('OptOut=true') > -1)) {
 
         
