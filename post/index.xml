@@ -6,10 +6,20 @@
     <description>Recent content in Posts on CodeSnipps</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de</language>
-    <lastBuildDate>Sun, 15 Oct 2017 17:49:50 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 31 Jan 2018 18:02:31 +0100</lastBuildDate>
     
 	<atom:link href="http://codesnipps.simolation.de/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Android Oreo Notification Channels</title>
+      <link>http://codesnipps.simolation.de/post/android/android-oreo-notification-channel/</link>
+      <pubDate>Wed, 31 Jan 2018 18:02:31 +0100</pubDate>
+      
+      <guid>http://codesnipps.simolation.de/post/android/android-oreo-notification-channel/</guid>
+      <description>Google introduced the new notification channels in their latest Android version: Android Oreo (8.0). The notification channel might seem a bit similat to the notification groups, that have been added in Android Nougat, but this is something completely different!
+The notification channels allow the user to adjust the settings for each of those notifcation channels. Let&amp;rsquo;s say we have a chat app, that has three channels: 1. New message notification 2.</description>
+    </item>
     
     <item>
       <title>PHP: Create Thumbnails on the Fly</title>
