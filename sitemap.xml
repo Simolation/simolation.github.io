@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://codesnipps.simolation.de/post/raspberrypi/set-up-static-ip-on-raspbian-stretch/</loc>
+    <lastmod>2018-03-21T09:02:34+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://codesnipps.simolation.de/post/android/android-oreo-notification-channel/</loc>
     <lastmod>2018-01-31T18:02:31+01:00</lastmod>
   </url>
@@ -49,13 +54,13 @@
   
   <url>
     <loc>http://codesnipps.simolation.de/</loc>
-    <lastmod>2018-01-31T18:02:31+01:00</lastmod>
+    <lastmod>2018-03-21T09:02:34+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://codesnipps.simolation.de/post/</loc>
-    <lastmod>2018-01-31T18:02:31+01:00</lastmod>
+    <lastmod>2018-03-21T09:02:34+01:00</lastmod>
     <priority>0</priority>
   </url>
   
