@@ -2,41 +2,41 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CodeSnipps</title>
-    <link>https://codesnipps.simolation.de/</link>
+    <link>https://codesnipps.simolation.com/</link>
     <description>Recent content on CodeSnipps</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de</language>
     <lastBuildDate>Wed, 31 Jan 2018 18:02:31 +0100</lastBuildDate>
     
-	<atom:link href="https://codesnipps.simolation.de/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://codesnipps.simolation.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Android Oreo Notification Channels</title>
-      <link>https://codesnipps.simolation.de/post/android/android-oreo-notification-channel/</link>
+      <link>https://codesnipps.simolation.com/post/android/android-oreo-notification-channel/</link>
       <pubDate>Wed, 31 Jan 2018 18:02:31 +0100</pubDate>
       
-      <guid>https://codesnipps.simolation.de/post/android/android-oreo-notification-channel/</guid>
+      <guid>https://codesnipps.simolation.com/post/android/android-oreo-notification-channel/</guid>
       <description>Google introduced the new notification channels in their latest Android version: Android Oreo (8.0). The notification channel might seem a bit similat to the notification groups, that have been added in Android Nougat, but this is something completely different!
 The notification channels allow the user to adjust the settings for each of those notifcation channels. Let&amp;rsquo;s say we have a chat app, that has three channels: 1. New message notification 2.</description>
     </item>
     
     <item>
       <title>PHP: Create Thumbnails on the Fly</title>
-      <link>https://codesnipps.simolation.de/post/php/create-thumbnails-on-the-fly/</link>
+      <link>https://codesnipps.simolation.com/post/php/create-thumbnails-on-the-fly/</link>
       <pubDate>Sun, 15 Oct 2017 17:49:50 +0200</pubDate>
       
-      <guid>https://codesnipps.simolation.de/post/php/create-thumbnails-on-the-fly/</guid>
+      <guid>https://codesnipps.simolation.com/post/php/create-thumbnails-on-the-fly/</guid>
       <description>Sometimes it might be usefull, to create thumbnails on your server. Most of the time you have your images right on your server, but when you want to handle an image from an url it becomes more difficult. Here is how you can create a thumbnail directly from an url and display it.
 For that you can use this Thumbnail function. You can pass an url, the width + height of the final image and if you provide a filename it will be saved as a file, otherways the image will be returned so you can easily display it.</description>
     </item>
     
     <item>
       <title>Android: Shared transitions</title>
-      <link>https://codesnipps.simolation.de/post/android/shared-transitions/</link>
+      <link>https://codesnipps.simolation.com/post/android/shared-transitions/</link>
       <pubDate>Thu, 17 Aug 2017 22:14:52 +0200</pubDate>
       
-      <guid>https://codesnipps.simolation.de/post/android/shared-transitions/</guid>
+      <guid>https://codesnipps.simolation.com/post/android/shared-transitions/</guid>
       <description>In android you can make cool animations, that let objects move into another activity. For that you should use shared transitions.
 Get started To start you have to add this tag android:transitionName=&amp;ldquo;transition_name&amp;rdquo; to your view, that is going to move. Chose an unique name for the transition, else it won&amp;rsquo;t work.
 &amp;lt;ImageView android:id=&amp;quot;@+id/image&amp;quot; android:layout_width=&amp;quot;40dp&amp;quot; android:layout_height=&amp;quot;40dp&amp;quot; android:transitionName=&amp;quot;transition_image&amp;quot; android:src=&amp;quot;@drawable/avatar&amp;quot; /&amp;gt;  Now you can go on with your activity.
@@ -45,19 +45,19 @@ Intent intent = new Intent(MainActivity.</description>
     
     <item>
       <title>Android: Create circular reveal animation, when starting activitys</title>
-      <link>https://codesnipps.simolation.de/post/android/create-circular-reveal-animation-when-starting-activitys/</link>
+      <link>https://codesnipps.simolation.com/post/android/create-circular-reveal-animation-when-starting-activitys/</link>
       <pubDate>Tue, 15 Aug 2017 21:28:56 +0200</pubDate>
       
-      <guid>https://codesnipps.simolation.de/post/android/create-circular-reveal-animation-when-starting-activitys/</guid>
+      <guid>https://codesnipps.simolation.com/post/android/create-circular-reveal-animation-when-starting-activitys/</guid>
       <description>When you browse through Google&amp;rsquo;s Material Design Guidlines you may discover, that many components or animations are not easy to build in android. For some of them you won&amp;rsquo;t find any library to achieve the same result. One of those animations is the circular reveal animation when you start a new activity. To achieve that easily, I made a small class, that you nearly just have to implement. Step 1 You have two activitys: The first activity with, let&amp;rsquo;s say, has a fab button and when you click it, it opens the second activity with that cool circular reveal animation starting from that fab button.</description>
     </item>
     
     <item>
       <title>Android: Volley set headers</title>
-      <link>https://codesnipps.simolation.de/post/android/volley-set-headers/</link>
+      <link>https://codesnipps.simolation.com/post/android/volley-set-headers/</link>
       <pubDate>Tue, 15 Aug 2017 20:56:32 +0200</pubDate>
       
-      <guid>https://codesnipps.simolation.de/post/android/volley-set-headers/</guid>
+      <guid>https://codesnipps.simolation.com/post/android/volley-set-headers/</guid>
       <description>If you are using volley for android as described in this post, you may have to set headers to get the wanted response from your server.
 Therefore you just have to add after the wanted request an Map, that returns the desired headers:
 JsonObjectRequest jsonObjectRequest = new JsonObjectRequest( ... ) { @Override public Map&amp;lt;String, String&amp;gt; getHeaders() { Map&amp;lt;String, String&amp;gt; params = new HashMap&amp;lt;String, String&amp;gt;(); params.put(&amp;quot;x-vacationtoken&amp;quot;, &amp;quot;secret_token&amp;quot;); params.put(&amp;quot;content-type&amp;quot;, &amp;quot;application/json&amp;quot;); return params; } };  Code Example String url = &amp;quot;http://httpbin.</description>
@@ -65,10 +65,10 @@ JsonObjectRequest jsonObjectRequest = new JsonObjectRequest( ... ) { @Override p
     
     <item>
       <title>Android: Get started with volley</title>
-      <link>https://codesnipps.simolation.de/post/android/get-started-with-volley/</link>
+      <link>https://codesnipps.simolation.com/post/android/get-started-with-volley/</link>
       <pubDate>Tue, 15 Aug 2017 13:26:38 +0200</pubDate>
       
-      <guid>https://codesnipps.simolation.de/post/android/get-started-with-volley/</guid>
+      <guid>https://codesnipps.simolation.com/post/android/get-started-with-volley/</guid>
       <description>In android it is very useful to make network requests to mostly interact with an api. There are many ways to achieve that, but the simplest way - that is also recommended by Google - is the library volley.
 Get Started At first you have to add the volley library to your build.gradle
 dependencies { ... compile &#39;com.android.volley:volley:1.0.0&#39; }  Next you have to add the Internet permission to your AndroidManifest.</description>
@@ -76,10 +76,10 @@ dependencies { ... compile &#39;com.android.volley:volley:1.0.0&#39; }  Next you
     
     <item>
       <title>Android: Programmatically hide and show the keyboard</title>
-      <link>https://codesnipps.simolation.de/post/android/hide-and-show-keyboard/</link>
+      <link>https://codesnipps.simolation.com/post/android/hide-and-show-keyboard/</link>
       <pubDate>Tue, 15 Aug 2017 12:16:14 +0200</pubDate>
       
-      <guid>https://codesnipps.simolation.de/post/android/hide-and-show-keyboard/</guid>
+      <guid>https://codesnipps.simolation.com/post/android/hide-and-show-keyboard/</guid>
       <description>Sometimes you may want to programmatically close or open the soft keyboard in your app.
 Open soft keyboard When you click on a button you can focus an editText and open the keyboard, to start typing
 //Get EditText instance EditText editText = (EditText) findViewById(R.id.edit_text); //focus editText editText.requestFocus(); //create InputMethodManager InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE); //show soft keyboard and you can start typing into editText imm.showSoftInput(editText, InputMethodManager.SHOW_IMPLICIT);  Hide soft keyboard When you submit a form, you may want to hide the keyboard, even if the editText is still focused</description>
@@ -87,10 +87,10 @@ Open soft keyboard When you click on a button you can focus an editText and open
     
     <item>
       <title>Android: Select date with DatePickerDialog</title>
-      <link>https://codesnipps.simolation.de/post/android/datepicker/</link>
+      <link>https://codesnipps.simolation.com/post/android/datepicker/</link>
       <pubDate>Mon, 14 Aug 2017 23:05:47 +0200</pubDate>
       
-      <guid>https://codesnipps.simolation.de/post/android/datepicker/</guid>
+      <guid>https://codesnipps.simolation.com/post/android/datepicker/</guid>
       <description>With androids date picker you can easily choose a date without much code.
 Guide How To 1.Add latest appcompat library to your build.gradle.
 dependencies { ... compile &#39;com.android.support:appcompat-v7:26.+&#39; // set exact version here }  2.Make sure, that your activity extends android.support.v7.app.AppCompatActivity.
