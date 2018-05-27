@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Simolation">
+
+<meta name="generator" content="Hugo 0.26" />
+<title>Android: Create circular reveal animation, when starting activitys</title>
+<link rel="shortcut icon" href="https://codesnipps.simolation.com/images/favicon.png">
+<meta name="google-site-verification" content="kEAoZ3boC_qgbmORSHeuIFpBqileSNVVKU-vb97IDBM" />	
+<meta name="google-site-verification" content="sNKZnMhCIDiYCvaRV8AxPg3Pq02tO6JA6vHG_Qb9deg" />	
+
+<script>
+	if(window.location.search.replace("?", "") == "optOut") {
+		optOut();
+	}
+	if(window.location.search.replace("?", "") == "optIn") {
+		optIn();
+	}
+
+	function optOut() {
+        document.cookie = 'OptOut=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+        alert("Du wurdest von sämtlichem Tracking auf dieser Seite ausgeschlossen");
+    }
+
+    
+    function optIn() {
+        document.cookie = 'OptOut=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+        alert("Du wirst wieder getrackt");
+    }
+
+  if (!(document.cookie.indexOf('OptOut=true') > -1)) {
+
+        
+        window['_fs_debug'] = false;
+        window['_fs_host'] = 'fullstory.com';
+        window['_fs_org'] = '80M6R';
+        window['_fs_namespace'] = 'FS';
+        (function(m,n,e,t,l,o,g,y){
+            if (e in m) {if(m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].');} return;}
+            g=m[e]=function(a,b){g.q?g.q.push([a,b]):g._api(a,b);};g.q=[];
+            o=n.createElement(t);o.async=1;o.src='https://'+_fs_host+'/s/fs.js';
+            y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y);
+            g.identify=function(i,v){g(l,{uid:i});if(v)g(l,v)};g.setUserVars=function(v){g(l,v)};
+            g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)};
+            g.clearUserCookie=function(c,d,i){if(!c || document.cookie.match('fs_uid=[`;`]*`[`;`]*`[`;`]*`')){
+            d=n.domain;while(1){n.cookie='fs_uid=;domain='+d+
+            ';path=/;expires='+new Date(0).toUTCString();i=d.indexOf('.');if(i<0)break;d=d.slice(i+1)}}};
+        })(window,document,window['_fs_namespace'],'script','user');
+
+        
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-87161532-7', 'auto');
+        ga('set', 'anonymizeIp', true);
+        ga('send', 'pageview');
+
+    }
+</script>
+
+<link rel="stylesheet" href="https://codesnipps.simolation.com/css/style.css">
+<link rel="stylesheet" href="https://codesnipps.simolation.com/css/highlight.css">
+
+
+
+<link rel="stylesheet" href="https://codesnipps.simolation.com/css/monosocialiconsfont.css">
+
+
+
+
+<meta property="og:title" content="Android: Create circular reveal animation, when starting activitys" />
+<meta property="og:description" content="When you browse through Google&rsquo;s Material Design Guidlines you may discover, that many components or animations are not easy to build in android. For some of them you won&rsquo;t find any library to achieve the same result. One of those animations is the circular reveal animation when you start a new activity. To achieve that easily, I made a small class, that you nearly just have to implement. Step 1 You have two activitys: The first activity with, let&rsquo;s say, has a fab button and when you click it, it opens the second activity with that cool circular reveal animation starting from that fab button." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://codesnipps.simolation.com/post/android/create-circular-reveal-animation-when-starting-activitys/" />
+
+
+
+<meta property="article:published_time" content="2017-08-15T21:28:56&#43;02:00"/>
+<meta property="article:modified_time" content="2017-08-15T21:28:56&#43;02:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Android: Create circular reveal animation, when starting activitys">
+<meta itemprop="description" content="When you browse through Google&rsquo;s Material Design Guidlines you may discover, that many components or animations are not easy to build in android. For some of them you won&rsquo;t find any library to achieve the same result. One of those animations is the circular reveal animation when you start a new activity. To achieve that easily, I made a small class, that you nearly just have to implement. Step 1 You have two activitys: The first activity with, let&rsquo;s say, has a fab button and when you click it, it opens the second activity with that cool circular reveal animation starting from that fab button.">
+
+
+<meta itemprop="dateModified" content="2017-08-15T21:28:56&#43;02:00" />
+<meta itemprop="wordCount" content="752">
+
+
+
+<meta itemprop="keywords" content="" />
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Android: Create circular reveal animation, when starting activitys"/>
+<meta name="twitter:description" content="When you browse through Google&rsquo;s Material Design Guidlines you may discover, that many components or animations are not easy to build in android. For some of them you won&rsquo;t find any library to achieve the same result. One of those animations is the circular reveal animation when you start a new activity. To achieve that easily, I made a small class, that you nearly just have to implement. Step 1 You have two activitys: The first activity with, let&rsquo;s say, has a fab button and when you click it, it opens the second activity with that cool circular reveal animation starting from that fab button."/>
+
+
+    </head>
+<body>
+    <nav class="main-nav">
+	
+		<a href='https://codesnipps.simolation.com/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+
+	
+</nav>
+
+    <section id="wrapper">
+        
+        
+<article class="post">
+    <header>
+        <h1>Android: Create circular reveal animation, when starting activitys</h1>
+        <h2 class="headline">
+        August 15, 2017
+        <br>
+        
+        </h2>
+    </header>
+    <section id="post-body">
+        
+
+<p>When you browse through Google&rsquo;s Material Design Guidlines you may discover, that many components or animations are not easy to build in android. For some of them you won&rsquo;t find any library to achieve the same result. One of those animations is the circular reveal animation when you start a new activity. To achieve that easily, I made a small class, that you nearly just have to implement.
+<p style="text-align: center;">
+    <img src="/static/images/create-circular-reveal-animation-when-starting-activitys.gif" alt="Demo image" style="max-height: 500px;" />
+</p></p>
+
+<h2 id="step-1">Step 1</h2>
+
+<p>You have two activitys: The first activity with, let&rsquo;s say, has a fab button and when you click it, it opens the second activity with that cool circular reveal animation starting from that fab button.</p>
+
+<p>Make sure, that your activitys both extend the <code>AppCompatActivity</code></p>
+
+<pre><code class="language-java">public class MainActivity extends AppCompatActivity { ... }
+</code></pre>
+
+<p>Then just add this method to your activity:</p>
+
+<pre><code class="language-java">private void startRevealActivity(View v) {
+    //calculates the center of the View v you are passing
+    int revealX = (int) (v.getX() + v.getWidth() / 2);
+    int revealY = (int) (v.getY() + v.getHeight() / 2);
+
+    //create an intent, that launches the second activity and pass the x and y coordinates
+    Intent intent = new Intent(this, SecondActivity.class);
+    intent.putExtra(RevealAnimation.EXTRA_CIRCULAR_REVEAL_X, revealX);
+    intent.putExtra(RevealAnimation.EXTRA_CIRCULAR_REVEAL_Y, revealY);
+    
+    //just start the activity as an shared transition, but set the options bundle to null
+    ActivityCompat.startActivity(this, intent, null);
+    
+    //to prevent strange behaviours override the pending transitions
+    overridePendingTransition(0, 0);
+}
+</code></pre>
+
+<p>This code can easily be used with an onclicklistener:</p>
+
+<pre><code class="language-java">fabButton.setOnClickListener(new View.OnClickListener() {
+    public void onClick(View v) {
+        startRevealActivity(v);
+    }
+});
+</code></pre>
+
+<h2 id="step-2">Step 2</h2>
+
+<p>Now you can add my class called <code>RevealAnimation.java</code>.</p>
+
+<pre><code class="language-java">public class RevealAnimation {
+    public static final String EXTRA_CIRCULAR_REVEAL_X = &quot;EXTRA_CIRCULAR_REVEAL_X&quot;;
+    public static final String EXTRA_CIRCULAR_REVEAL_Y = &quot;EXTRA_CIRCULAR_REVEAL_Y&quot;;
+
+    private final View mView;
+    private Activity mActivity;
+
+    private int revealX;
+    private int revealY;
+
+    public RevealAnimation(View view, Intent intent, Activity activity) {
+        mView = view;
+        mActivity = activity;
+
+        //when you're android version is at leat Lollipop it starts the reveal activity
+        if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.LOLLIPOP &amp;&amp;
+                intent.hasExtra(EXTRA_CIRCULAR_REVEAL_X) &amp;&amp;
+                intent.hasExtra(EXTRA_CIRCULAR_REVEAL_Y)) {
+            view.setVisibility(View.INVISIBLE);
+
+            revealX = intent.getIntExtra(EXTRA_CIRCULAR_REVEAL_X, 0);
+            revealY = intent.getIntExtra(EXTRA_CIRCULAR_REVEAL_Y, 0);
+
+            ViewTreeObserver viewTreeObserver = view.getViewTreeObserver();
+            if (viewTreeObserver.isAlive()) {
+                viewTreeObserver.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                    @Override
+                    public void onGlobalLayout() {
+                        revealActivity(revealX, revealY);
+                        mView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                    }
+                });
+            }
+        } else {
+
+            //if you are below android 5 it jist shows the activity
+            view.setVisibility(View.VISIBLE);
+        }
+    }
+
+    public void revealActivity(int x, int y) {
+        if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.LOLLIPOP) {
+            float finalRadius = (float) (Math.max(mView.getWidth(), mView.getHeight()) * 1.1);
+
+            // create the animator for this view (the start radius is zero)
+            Animator circularReveal = ViewAnimationUtils.createCircularReveal(mView, x, y, 0, finalRadius);
+            circularReveal.setDuration(300);
+            circularReveal.setInterpolator(new AccelerateInterpolator());
+
+            // make the view visible and start the animation
+            mView.setVisibility(View.VISIBLE);
+            circularReveal.start();
+        } else {
+            mActivity.finish();
+        }
+    }
+
+    public void unRevealActivity() {
+        if (Build.VERSION.SDK_INT &lt; Build.VERSION_CODES.LOLLIPOP) {
+            mActivity.finish();
+        } else {
+            float finalRadius = (float) (Math.max(mView.getWidth(), mView.getHeight()) * 1.1);
+            Animator circularReveal = ViewAnimationUtils.createCircularReveal(
+                    mView, revealX, revealY, finalRadius, 0);
+
+            circularReveal.setDuration(300);
+            circularReveal.addListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    mView.setVisibility(View.INVISIBLE);
+                    mActivity.finish();
+                    mActivity.overridePendingTransition(0, 0);
+                }
+            });
+
+            circularReveal.start();
+        }
+    }
+}
+</code></pre>
+
+<h2 id="step-3">Step 3</h2>
+
+<p>Before we go on, you have to make some adjustments to your activity&rsquo;s style.
+You achieve the best results, when you add this style to your activitys. But make sure, you put them into a <code>values-v21</code> folder, because they will only work on SDK Version 21 and up.</p>
+
+<pre><code class="language-xml">&lt;style name=&quot;AppTheme&quot; parent=&quot;Theme.AppCompat.Light.NoActionBar&quot;&gt;
+    &lt;!-- Style for the main activity --&gt;
+    &lt;item name=&quot;colorPrimary&quot;&gt;@color/colorPrimary&lt;/item&gt;
+    &lt;item name=&quot;colorPrimaryDark&quot;&gt;@color/colorPrimaryDark&lt;/item&gt;
+    &lt;item name=&quot;colorAccent&quot;&gt;@color/colorAccent&lt;/item&gt;
+&lt;/style&gt;
+
+&lt;style name=&quot;AppTheme.Transparent&quot; parent=&quot;AppTheme&quot;&gt;
+    &lt;!-- Style for the second activity --&gt;
+    &lt;item name=&quot;android:windowIsTranslucent&quot;&gt;true&lt;/item&gt;
+    &lt;item name=&quot;android:windowBackground&quot;&gt;@android:color/transparent&lt;/item&gt;
+    &lt;item name=&quot;android:windowDrawsSystemBarBackgrounds&quot;&gt;true&lt;/item&gt;
+&lt;/style&gt;
+</code></pre>
+
+<p>Now just add the defined styles to your two activitys.
+Just play around with the styles to match them your preferences. But keep in mind, that the second activity <strong>has to be transparent</strong>.</p>
+
+<pre><code class="language-xml">&lt;activity android:name=&quot;.MainActivity&quot; android:theme=&quot;@style/AppTheme&quot;&gt;
+    &lt;intent-filter&gt;
+        &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;
+
+        &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
+    &lt;/intent-filter&gt;
+&lt;/activity&gt;
+&lt;activity android:name=&quot;.SecondActivity&quot; android:theme=&quot;@style/AppTheme.Transparent&quot; /&gt;
+</code></pre>
+
+<p>In the second activity you have to <strong>set a background color</strong> (on your root layout), else it won&rsquo;t work, because we previously set the activity as <code>Transparent</code>.</p>
+
+<h2 id="step-4">Step 4</h2>
+
+<p>Now you have to init the <code>new RevealAnimation()</code> in the onCreate method of your second activity.</p>
+
+<pre><code class="language-java">RevealAnimation mRevealAnimation;
+
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+
+    Intent intent = this.getIntent();   //get the intent to recieve the x and y coords, that you passed before
+
+    LinearLayout rootLayout = (LinearLayout) findViewById(R.id.root_layout); //there you have to get the root layout of your second activity
+    mRevealAnimation = new RevealAnimation(rootLayout, intent, this);
+}
+</code></pre>
+
+<p>Now when you start the activity it should do the desired animation :)</p>
+
+<p>If you want to show that animation backwards when you finish the activity, just call the <code>unRevealActivity()</code> method.</p>
+
+<pre><code class="language-java">@Override
+public void onBackPressed()
+{
+    mRevealAnimation.unRevealActivity();
+}
+</code></pre>
+
+<p>I hope, you&rsquo;ll get it to work :)</p>
+
+<p><a href="https://android.jlelse.eu/a-little-thing-that-matter-how-to-reveal-an-activity-with-circular-revelation-d94f9bfcae28">This article is based on this source</a></p>
+
+    </section>
+</article>
+
+<footer id="post-meta" class="clearfix">
+    
+    <a href="https://simolation.com/" target="_blank">
+        <img class="avatar" src="https://codesnipps.simolation.com/images/avatar.png">
+        <div>
+            <span class="dark">Simolation</span>
+            <span>Young web and android developer from germany</span>
+        </div>
+    </a>
+    
+    <section id="sharing">
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcodesnipps.simolation.com%2fpost%2fandroid%2fcreate-circular-reveal-animation-when-starting-activitys%2f - Android%3a%20Create%20circular%20reveal%20animation%2c%20when%20starting%20activitys "><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+    </section>
+</footer>
+
+
+
+<ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+
+    
+    
+    
+        <li>
+            <a href="/post/android/android-oreo-notification-channel/">Android Oreo Notification Channels<aside class="dates">Jan 31 2018</aside></a>
+        </li>
+    
+        <li>
+            <a href="/post/php/create-thumbnails-on-the-fly/">PHP: Create Thumbnails on the Fly<aside class="dates">Oct 15 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/post/android/shared-transitions/">Android: Shared transitions<aside class="dates">Aug 17 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/post/android/volley-set-headers/">Android: Volley set headers<aside class="dates">Aug 15 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/post/android/get-started-with-volley/">Android: Get started with volley<aside class="dates">Aug 15 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/post/android/hide-and-show-keyboard/">Android: Programmatically hide and show the keyboard<aside class="dates">Aug 15 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/post/android/datepicker/">Android: Select date with DatePickerDialog<aside class="dates">Aug 14 2017</aside></a>
+        </li>
+    
+</ul>
+
+
+
+        <footer id="footer">
+    
+    <p class="small">
+    
+        © Copyright 2018 <a href="https://simolation.com/" target="_blank">Simolation</a>
+    
+    <br />
+    <a href="https://simolation.com/impressum?utm_source=codesnipps_footer" target="_blank">Imprint</a> | <a href="https://simolation.com/datenschutzerklaerung?utm_source=codesnipps_footer" target="_blank">Privacy Policy</a>
+    </p>
+</footer>
+
+    </section>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://codesnipps.simolation.com/js/main.js"></script>
+<script src="https://codesnipps.simolation.com/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+</body>
+</html>

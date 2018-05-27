@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Simolation">
+
+<meta name="generator" content="Hugo 0.26" />
+<title>Android: Select date with DatePickerDialog</title>
+<link rel="shortcut icon" href="https://codesnipps.simolation.com/images/favicon.png">
+<meta name="google-site-verification" content="kEAoZ3boC_qgbmORSHeuIFpBqileSNVVKU-vb97IDBM" />	
+<meta name="google-site-verification" content="sNKZnMhCIDiYCvaRV8AxPg3Pq02tO6JA6vHG_Qb9deg" />	
+
+<script>
+	if(window.location.search.replace("?", "") == "optOut") {
+		optOut();
+	}
+	if(window.location.search.replace("?", "") == "optIn") {
+		optIn();
+	}
+
+	function optOut() {
+        document.cookie = 'OptOut=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+        alert("Du wurdest von sämtlichem Tracking auf dieser Seite ausgeschlossen");
+    }
+
+    
+    function optIn() {
+        document.cookie = 'OptOut=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+        alert("Du wirst wieder getrackt");
+    }
+
+  if (!(document.cookie.indexOf('OptOut=true') > -1)) {
+
+        
+        window['_fs_debug'] = false;
+        window['_fs_host'] = 'fullstory.com';
+        window['_fs_org'] = '80M6R';
+        window['_fs_namespace'] = 'FS';
+        (function(m,n,e,t,l,o,g,y){
+            if (e in m) {if(m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].');} return;}
+            g=m[e]=function(a,b){g.q?g.q.push([a,b]):g._api(a,b);};g.q=[];
+            o=n.createElement(t);o.async=1;o.src='https://'+_fs_host+'/s/fs.js';
+            y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y);
+            g.identify=function(i,v){g(l,{uid:i});if(v)g(l,v)};g.setUserVars=function(v){g(l,v)};
+            g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)};
+            g.clearUserCookie=function(c,d,i){if(!c || document.cookie.match('fs_uid=[`;`]*`[`;`]*`[`;`]*`')){
+            d=n.domain;while(1){n.cookie='fs_uid=;domain='+d+
+            ';path=/;expires='+new Date(0).toUTCString();i=d.indexOf('.');if(i<0)break;d=d.slice(i+1)}}};
+        })(window,document,window['_fs_namespace'],'script','user');
+
+        
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-87161532-7', 'auto');
+        ga('set', 'anonymizeIp', true);
+        ga('send', 'pageview');
+
+    }
+</script>
+
+<link rel="stylesheet" href="https://codesnipps.simolation.com/css/style.css">
+<link rel="stylesheet" href="https://codesnipps.simolation.com/css/highlight.css">
+
+
+
+<link rel="stylesheet" href="https://codesnipps.simolation.com/css/monosocialiconsfont.css">
+
+
+
+
+<meta property="og:title" content="Android: Select date with DatePickerDialog" />
+<meta property="og:description" content="With androids date picker you can easily choose a date without much code.
+Guide How To 1.Add latest appcompat library to your build.gradle.
+dependencies { ... compile &#39;com.android.support:appcompat-v7:26.&#43;&#39; // set exact version here }  2.Make sure, that your activity extends android.support.v7.app.AppCompatActivity.
+public class MainActivity extends AppCompatActivity { ... }  3.Create your DatePickerDialog and set a context, a listener and the start year, month and day.
+DatePickerDialog datePickerDialog = new DatePickerDialog( context, listener, startYear, starthMonth, startDay);  4." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://codesnipps.simolation.com/post/android/datepicker/" />
+
+
+
+<meta property="article:published_time" content="2017-08-14T23:05:47&#43;02:00"/>
+<meta property="article:modified_time" content="2017-08-14T23:05:47&#43;02:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Android: Select date with DatePickerDialog">
+<meta itemprop="description" content="With androids date picker you can easily choose a date without much code.
+Guide How To 1.Add latest appcompat library to your build.gradle.
+dependencies { ... compile &#39;com.android.support:appcompat-v7:26.&#43;&#39; // set exact version here }  2.Make sure, that your activity extends android.support.v7.app.AppCompatActivity.
+public class MainActivity extends AppCompatActivity { ... }  3.Create your DatePickerDialog and set a context, a listener and the start year, month and day.
+DatePickerDialog datePickerDialog = new DatePickerDialog( context, listener, startYear, starthMonth, startDay);  4.">
+
+
+<meta itemprop="dateModified" content="2017-08-14T23:05:47&#43;02:00" />
+<meta itemprop="wordCount" content="253">
+
+
+
+<meta itemprop="keywords" content="" />
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Android: Select date with DatePickerDialog"/>
+<meta name="twitter:description" content="With androids date picker you can easily choose a date without much code.
+Guide How To 1.Add latest appcompat library to your build.gradle.
+dependencies { ... compile &#39;com.android.support:appcompat-v7:26.&#43;&#39; // set exact version here }  2.Make sure, that your activity extends android.support.v7.app.AppCompatActivity.
+public class MainActivity extends AppCompatActivity { ... }  3.Create your DatePickerDialog and set a context, a listener and the start year, month and day.
+DatePickerDialog datePickerDialog = new DatePickerDialog( context, listener, startYear, starthMonth, startDay);  4."/>
+
+
+    </head>
+<body>
+    <nav class="main-nav">
+	
+		<a href='https://codesnipps.simolation.com/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+
+	
+</nav>
+
+    <section id="wrapper">
+        
+        
+<article class="post">
+    <header>
+        <h1>Android: Select date with DatePickerDialog</h1>
+        <h2 class="headline">
+        August 14, 2017
+        <br>
+        
+        </h2>
+    </header>
+    <section id="post-body">
+        
+
+<p>With androids date picker you can easily choose a date without much code.</p>
+
+<h1 id="guide-how-to">Guide How To</h1>
+
+<p>1.Add latest appcompat library to your <code>build.gradle</code>.</p>
+
+<pre><code class="language-java">dependencies {
+        ...
+    compile 'com.android.support:appcompat-v7:26.+' // set exact version here
+}
+</code></pre>
+
+<p>2.Make sure, that your activity extends <code>android.support.v7.app.AppCompatActivity</code>.</p>
+
+<pre><code class="language-java">public class MainActivity extends AppCompatActivity { ... }
+</code></pre>
+
+<p>3.Create your <code>DatePickerDialog</code> and set a context, a listener and the start year, month and day.</p>
+
+<pre><code class="language-java">DatePickerDialog datePickerDialog = new DatePickerDialog(
+                        context, 
+                        listener, 
+                        startYear, 
+                        starthMonth, 
+                        startDay);
+</code></pre>
+
+<p>4.Optional: Advanced options for your date picker</p>
+
+<pre><code class="language-java">DatePicker datePicker = datePickerDialog.getDatePicker();
+
+//set minimum date to select
+datePicker.setMinDate(long minDate);
+
+//set maximum date to select
+datePicker.setMaxDate(long maxDate);
+
+//set the first day of a week
+datePicker.setFirstDayOfWeek(int firstDayOfWeek)
+
+//update the current date
+datePicker.updateDate(int year, int month, int day);
+</code></pre>
+
+<p>5.Show your date picker using the <code>show()</code> method.</p>
+
+<pre><code class="language-java">datePickerDialog.show()
+</code></pre>
+
+<h1 id="code-example">Code Example</h1>
+
+<pre><code class="language-java">//create an datePickerListener to get the selected date. Needs to be done, before creating the date picker
+private DatePickerDialog.OnDateSetListener dateListener = new DatePickerDialog.OnDateSetListener() {
+    @Override
+    public void onDateSet(DatePicker view, int Year, int Month, int Day) {
+
+        //Year is now the selected year
+        //Month + 1 is the selected month. Note: add 1, because months starts from 0 in android
+        //Day is the selected day
+
+            Toast.makeText(MainYctivity.this, &quot;Selected date: &quot; + Year + &quot;-&quot; + (Month + 1) + &quot;-&quot; + Day, Toast.LENGTH_SHORT).show();
+            
+    }
+};
+
+//init calendar to get the current year, month and day
+Calendar cal = Calendar.getInstance();
+
+//creating the DatePickerDialog
+DatePickerDialog dialog = new DatePickerDialog(MainActivity.this, 
+                        dateListener,   //set the listener
+                        cal.get(Calendar.YEAR), 
+                        cal.get(Calendar.MONTH), 
+                        cal.get(Calendar.DAY_OF_MONTH));
+
+//optional set starting day (from today)
+dialog.getDatePicker().setMinDate(new Date().getTime());
+
+//show picker
+dialog.show();
+</code></pre>
+
+    </section>
+</article>
+
+<footer id="post-meta" class="clearfix">
+    
+    <a href="https://simolation.com/" target="_blank">
+        <img class="avatar" src="https://codesnipps.simolation.com/images/avatar.png">
+        <div>
+            <span class="dark">Simolation</span>
+            <span>Young web and android developer from germany</span>
+        </div>
+    </a>
+    
+    <section id="sharing">
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcodesnipps.simolation.com%2fpost%2fandroid%2fdatepicker%2f - Android%3a%20Select%20date%20with%20DatePickerDialog "><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+    </section>
+</footer>
+
+
+
+<ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+
+    
+    
+    
+        <li>
+            <a href="/post/android/android-oreo-notification-channel/">Android Oreo Notification Channels<aside class="dates">Jan 31 2018</aside></a>
+        </li>
+    
+        <li>
+            <a href="/post/php/create-thumbnails-on-the-fly/">PHP: Create Thumbnails on the Fly<aside class="dates">Oct 15 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/post/android/shared-transitions/">Android: Shared transitions<aside class="dates">Aug 17 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/post/android/create-circular-reveal-animation-when-starting-activitys/">Android: Create circular reveal animation, when starting activitys<aside class="dates">Aug 15 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/post/android/volley-set-headers/">Android: Volley set headers<aside class="dates">Aug 15 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/post/android/get-started-with-volley/">Android: Get started with volley<aside class="dates">Aug 15 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/post/android/hide-and-show-keyboard/">Android: Programmatically hide and show the keyboard<aside class="dates">Aug 15 2017</aside></a>
+        </li>
+    
+</ul>
+
+
+
+        <footer id="footer">
+    
+    <p class="small">
+    
+        © Copyright 2018 <a href="https://simolation.com/" target="_blank">Simolation</a>
+    
+    <br />
+    <a href="https://simolation.com/impressum?utm_source=codesnipps_footer" target="_blank">Imprint</a> | <a href="https://simolation.com/datenschutzerklaerung?utm_source=codesnipps_footer" target="_blank">Privacy Policy</a>
+    </p>
+</footer>
+
+    </section>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://codesnipps.simolation.com/js/main.js"></script>
+<script src="https://codesnipps.simolation.com/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+</body>
+</html>

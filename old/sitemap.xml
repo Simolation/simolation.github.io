@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://codesnipps.simolation.com/post/android/android-oreo-notification-channel/</loc>
+    <lastmod>2018-01-31T18:02:31+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codesnipps.simolation.com/post/php/create-thumbnails-on-the-fly/</loc>
+    <lastmod>2017-10-15T17:49:50+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codesnipps.simolation.com/post/android/shared-transitions/</loc>
+    <lastmod>2017-08-17T22:14:52+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codesnipps.simolation.com/post/android/create-circular-reveal-animation-when-starting-activitys/</loc>
+    <lastmod>2017-08-15T21:28:56+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codesnipps.simolation.com/post/android/volley-set-headers/</loc>
+    <lastmod>2017-08-15T20:56:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codesnipps.simolation.com/post/android/get-started-with-volley/</loc>
+    <lastmod>2017-08-15T13:26:38+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codesnipps.simolation.com/post/android/hide-and-show-keyboard/</loc>
+    <lastmod>2017-08-15T12:16:14+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codesnipps.simolation.com/post/android/datepicker/</loc>
+    <lastmod>2017-08-14T23:05:47+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codesnipps.simolation.com/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://codesnipps.simolation.com/</loc>
+    <lastmod>2018-01-31T18:02:31+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://codesnipps.simolation.com/post/</loc>
+    <lastmod>2018-01-31T18:02:31+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://codesnipps.simolation.com/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
