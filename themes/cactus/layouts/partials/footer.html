@@ -1,0 +1,14 @@
+<footer id="footer">
+    {{ if .Site.Social }}
+        {{ partial "social.html" . }}
+    {{ end }}
+    <p class="small">
+    {{ with .Site.Params.copyright }}
+        {{ . | markdownify }}
+    {{ else }}
+        © Copyright {{ now.Format "2006" }} {{ with .Site.Params.authorWeb }}<a href="{{ . }}" target="_blank">{{ end }}{{ .Site.Params.name }}{{ with .Site.Params.authorWeb }}</a>{{ end }}
+    {{ end }}
+    <br />
+    <a href="https://simolation.com/impressum?utm_source=codesnipps_footer" target="_blank">Imprint</a> | <a href="https://simolation.com/datenschutzerklaerung?utm_source=codesnipps_footer" target="_blank">Privacy Policy</a>
+    </p>
+</footer>
