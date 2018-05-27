@@ -1,0 +1,10 @@
+baseURL: "https://codesnipps.simolation.com/"
+languageCode: "de"
+title: "CodeSnipps"
+theme: "cactus"
+publishDir: "public"
+params:
+  name: "Simolation"
+  aboutAuthor: "Young web and android developer from germany"
+  authorWeb: "https://simolation.com/"
+  bio: "Free. Code. Snippets and Tutorials"
