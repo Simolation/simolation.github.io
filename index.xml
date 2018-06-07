@@ -6,10 +6,20 @@
     <description>Recent content on CodeSnipps</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de</language>
-    <lastBuildDate>Wed, 31 Jan 2018 18:02:31 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 07 Jun 2018 15:31:13 +0200</lastBuildDate>
     
 	<atom:link href="https://codesnipps.simolation.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Android: App Shortcuts</title>
+      <link>https://codesnipps.simolation.com/post/android/app-shortcuts/</link>
+      <pubDate>Thu, 07 Jun 2018 15:31:13 +0200</pubDate>
+      
+      <guid>https://codesnipps.simolation.com/post/android/app-shortcuts/</guid>
+      <description>Starting from Android 7.1 Google added App Shortcuts to Android. When you use a launcher that supports them, you can longpress an app icon and then you will see a floating widget with useful shortcuts.
+Static shortcuts You have the option to choose between static and dynamic shortcuts. When you already know, that only those few shortcuts will be available and there will be no change, you are good to go with the static ones.</description>
+    </item>
     
     <item>
       <title>Android Oreo Notification Channels</title>

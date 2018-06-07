@@ -105,7 +105,7 @@ For that you can use this Thumbnail function. You can pass an url, the width &#4
 
 <h1 id="how-to-use-the-function">How to use the function</h1>
 
-<pre><code class="language-php">$url = &quot;http://short1.link/ag2q80&quot;;
+<pre><code class="language-php">$url = &quot;https://short1.link/ag2q80&quot;;
 
 $image = Thumbnail($url);
 
@@ -148,7 +148,7 @@ else {
             $crop_y     =   ceil(($h - $w) / 2);
     }
 
-    // create image 
+    // create image
     $output = ImageCreateTrueColor($width, $height);
 
     //support transparent png images
@@ -167,7 +167,7 @@ else {
             imagepng($output, $filename);
         }
         else {
-            ImageJPEG($output, $filename, 70); 
+            ImageJPEG($output, $filename, 70);
         }
     }
     else {
@@ -210,6 +210,10 @@ else {
 
     
     
+    
+        <li>
+            <a href="/post/android/app-shortcuts/">Android: App Shortcuts<aside class="dates">Jun 7 2018</aside></a>
+        </li>
     
         <li>
             <a href="/post/android/android-oreo-notification-channel/">Android Oreo Notification Channels<aside class="dates">Jan 31 2018</aside></a>

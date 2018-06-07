@@ -126,7 +126,7 @@ Chose an unique name for the transition, else it won&rsquo;t work.</p>
 
 ImageView imageView = findViewById(R.id.image);
 
-ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, 
+ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this,
     (View) imageView, //put here the view, that should be shared
     &quot;transition_image&quot;); //this has to be the string, you set at the transitionName tag
 
@@ -154,7 +154,7 @@ Glide
     .listener(new RequestListener&lt;String, GlideDrawable&gt;() {
         @Override
         public boolean onException(Exception e, String model, Target&lt;GlideDrawable&gt; target, boolean isFirstResource) {
-            
+
             //loading the image failed, so you can display an error or anyways finish the transition
             supportStartPostponedEnterTransition();
             return false;
@@ -209,6 +209,10 @@ Glide
 
     
     
+    
+        <li>
+            <a href="/post/android/app-shortcuts/">Android: App Shortcuts<aside class="dates">Jun 7 2018</aside></a>
+        </li>
     
         <li>
             <a href="/post/android/android-oreo-notification-channel/">Android Oreo Notification Channels<aside class="dates">Jan 31 2018</aside></a>

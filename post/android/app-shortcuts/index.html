@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Simolation">
+
+<meta name="generator" content="Hugo 0.26" />
+<title>Android: App Shortcuts</title>
+<link rel="shortcut icon" href="https://codesnipps.simolation.com/images/favicon.png">
+<meta name="google-site-verification" content="kEAoZ3boC_qgbmORSHeuIFpBqileSNVVKU-vb97IDBM" />	
+<meta name="google-site-verification" content="sNKZnMhCIDiYCvaRV8AxPg3Pq02tO6JA6vHG_Qb9deg" />	
+
+<script>
+if (!(document.cookie.indexOf('OptOut=true') > -1)  && !(location.hostname === "localhost")) {
+		(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-5TBPBC9');
+}
+</script>
+
+<link rel="stylesheet" href="https://codesnipps.simolation.com/css/style.css">
+<link rel="stylesheet" href="https://codesnipps.simolation.com/css/highlight.css">
+
+
+
+<link rel="stylesheet" href="https://codesnipps.simolation.com/css/monosocialiconsfont.css">
+
+
+
+
+<meta property="og:title" content="Android: App Shortcuts" />
+<meta property="og:description" content="Starting from Android 7.1 Google added App Shortcuts to Android. When you use a launcher that supports them, you can longpress an app icon and then you will see a floating widget with useful shortcuts.
+Static shortcuts You have the option to choose between static and dynamic shortcuts. When you already know, that only those few shortcuts will be available and there will be no change, you are good to go with the static ones." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://codesnipps.simolation.com/post/android/app-shortcuts/" />
+
+
+
+<meta property="article:published_time" content="2018-06-07T15:31:13&#43;02:00"/>
+<meta property="article:modified_time" content="2018-06-07T15:31:13&#43;02:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Android: App Shortcuts">
+<meta itemprop="description" content="Starting from Android 7.1 Google added App Shortcuts to Android. When you use a launcher that supports them, you can longpress an app icon and then you will see a floating widget with useful shortcuts.
+Static shortcuts You have the option to choose between static and dynamic shortcuts. When you already know, that only those few shortcuts will be available and there will be no change, you are good to go with the static ones.">
+
+
+<meta itemprop="dateModified" content="2018-06-07T15:31:13&#43;02:00" />
+<meta itemprop="wordCount" content="363">
+
+
+
+<meta itemprop="keywords" content="" />
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Android: App Shortcuts"/>
+<meta name="twitter:description" content="Starting from Android 7.1 Google added App Shortcuts to Android. When you use a launcher that supports them, you can longpress an app icon and then you will see a floating widget with useful shortcuts.
+Static shortcuts You have the option to choose between static and dynamic shortcuts. When you already know, that only those few shortcuts will be available and there will be no change, you are good to go with the static ones."/>
+
+
+    </head>
+<body>
+    <nav class="main-nav">
+	
+		<a href='https://codesnipps.simolation.com/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+
+	
+</nav>
+
+    <section id="wrapper">
+        
+        
+<article class="post">
+    <header>
+        <h1>Android: App Shortcuts</h1>
+        <h2 class="headline">
+        June 7, 2018
+        <br>
+        
+        </h2>
+    </header>
+    <section id="post-body">
+        
+
+<p style="text-align: center;">
+    <img src="/static/images/app-shortcuts.png" alt="App Shortcuts Title Image" style="max-height: 500px;" />
+</p>
+
+<p>Starting from Android 7.1 Google added App Shortcuts to Android. When you use a launcher that supports them, you can longpress an app icon and then you will see a floating widget with useful shortcuts.</p>
+
+<h2 id="static-shortcuts">Static shortcuts</h2>
+
+<p>You have the option to choose between static and dynamic shortcuts. When you already know, that only those few shortcuts will be available and there will be no change, you are good to go with the static ones.</p>
+
+<p>To begin with you have to add a reference to your app&rsquo;s <code>AndroidManifest.xml</code> to the activity that has the Launcher category:</p>
+
+<pre><code class="language-xml">&lt;activity
+    android:name=&quot;.MainActivity&quot;
+    android:theme=&quot;@style/AppTheme.BaseTheme&quot;&gt;
+    &lt;intent-filter&gt;
+        &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;
+
+        &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
+    &lt;/intent-filter&gt;
+
+    &lt;meta-data android:name=&quot;android.app.shortcuts&quot;
+        android:resource=&quot;@xml/shortcuts&quot; /&gt;
+&lt;/activity&gt;
+</code></pre>
+
+<p>And then you just have to create your <code>shortcuts.xml</code> file</p>
+
+<pre><code class="language-xml">&lt;shortcuts xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    tools:targetApi=&quot;25&quot;&gt;
+    &lt;shortcut
+        android:enabled=&quot;true&quot;
+        android:icon=&quot;@drawable/icon_action&quot;
+        android:shortcutId=&quot;shortcut_name&quot;
+        android:shortcutShortLabel=&quot;@string/short_cut_action&quot;&gt;
+        &lt;intent
+            android:action=&quot;android.intent.action.VIEW&quot;
+            android:targetClass=&quot;.MainActivity&quot;
+            android:targetPackage=&quot;com.example.myapp&quot;&gt;
+        &lt;/intent&gt;
+    &lt;/shortcut&gt;
+    &lt;!-- Add more shortcuts here --&gt;
+&lt;/shortcuts&gt;
+</code></pre>
+
+<p>Don&rsquo;t forget that you can add just up to 5 shortcuts, more will crash the app.</p>
+
+<h2 id="dynamic-shortcuts">Dynamic shortcuts</h2>
+
+<p>This option might be more interesting for the most of the developers out ther, because it allows you to add user related shortcuts and actions. A special shortcut for pro useres or a quick access shortcut to your favorite book? No problem!</p>
+
+<pre><code class="language-java">private void makeShortcuts() {
+  if (Build.VERSION.SDK_INT &gt;= 25) {
+    ShortcutManager shortcutManager = getSystemService(ShortcutManager.class);
+
+    Intent intent1 = new Intent(getApplicationContext(), ShortcutHandler.class); //specify a intent to use with the shortcut
+    intent1.setAction(Intent.ACTION_VIEW);
+
+    ShortcutInfo shortcut = new ShortcutInfo.Builder(this, &quot;shortcuts_id&quot;)
+        .setShortLabel(&quot;Name&quot;)
+        .setLongLabel(&quot;This is the shortcuts name&quot;)
+        .setIcon(Icon.createWithResource(context, R.drawable.icon_shortcut))
+        .setIntent(intent1)
+        .build();
+
+    //you can ofcourse create more than 1 shortcut, but keep in mind that it is not possible to create more than 5
+    //just add them also to the List that you pass to setDynamicShortcuts
+
+    shortcutManager.setDynamicShortcuts(Arrays.asList(shortcut));
+  }
+}
+</code></pre>
+
+<p>Now that you know how to create new shortcuts you can also</p>
+
+<p><code>.addDynamicShortcuts(List&lt;ShortcutInfo&gt;)</code></p>
+
+<p><code>.updateShortcuts(List&lt;ShortcutInfo&gt;)</code> They need to have the same id</p>
+
+<p><code>.removeDynamicShortcuts(List&lt;String&gt;)</code> Remove all shortcuts with specified id</p>
+
+<p><code>.removeAllDynamicShortcuts()</code> Remove all shortcuts</p>
+
+<h2 id="disable-enable-shortcuts">Disable/Enable shortcuts</h2>
+
+<p>Sometimes a user might not be allowed to use a shortcut, for example when he logged out or a trial expired:</p>
+
+<p><code>.disableShortcuts(List&lt;String&gt;)</code>
+or you can also define a disabled message:</p>
+
+<p><code>.disableShortcuts(List&lt;String&gt;, &ldquo;Sorry, you have to log in!&rdquo;)</code></p>
+
+<p>To (re-)enable the shortcuts just call
+<code>.enableShortcuts(List&lt;String&gt;)</code></p>
+
+    </section>
+</article>
+
+<footer id="post-meta" class="clearfix">
+    
+    <a href="https://simolation.com/" target="_blank">
+        <img class="avatar" src="https://codesnipps.simolation.com/images/avatar.png">
+        <div>
+            <span class="dark">Simolation</span>
+            <span>Young web and android developer from germany</span>
+        </div>
+    </a>
+    
+    <section id="sharing">
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fcodesnipps.simolation.com%2fpost%2fandroid%2fapp-shortcuts%2f - Android%3a%20App%20Shortcuts "><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+    </section>
+</footer>
+
+
+
+<ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+
+    
+    
+    
+        <li>
+            <a href="/post/android/android-oreo-notification-channel/">Android Oreo Notification Channels<aside class="dates">Jan 31 2018</aside></a>
+        </li>
+    
+        <li>
+            <a href="/post/php/create-thumbnails-on-the-fly/">PHP: Create Thumbnails on the Fly<aside class="dates">Oct 15 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/post/android/shared-transitions/">Android: Shared transitions<aside class="dates">Aug 17 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/post/android/create-circular-reveal-animation-when-starting-activitys/">Android: Create circular reveal animation, when starting activitys<aside class="dates">Aug 15 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/post/android/volley-set-headers/">Android: Volley set headers<aside class="dates">Aug 15 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/post/android/get-started-with-volley/">Android: Get started with volley<aside class="dates">Aug 15 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/post/android/hide-and-show-keyboard/">Android: Programmatically hide and show the keyboard<aside class="dates">Aug 15 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/post/android/datepicker/">Android: Select date with DatePickerDialog<aside class="dates">Aug 14 2017</aside></a>
+        </li>
+    
+</ul>
+
+
+
+        <footer id="footer">
+    
+    <p class="small">
+    
+        © Copyright 2018 <a href="https://simolation.com/" target="_blank">Simolation</a>
+    
+    <br />
+    <a href="https://simolation.com/impressum?utm_source=codesnipps_footer" target="_blank">Imprint</a> | <a href="https://simolation.com/datenschutzerklaerung?utm_source=codesnipps_footer" target="_blank">Privacy Policy</a>
+    </p>
+</footer>
+
+    </section>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://codesnipps.simolation.com/js/main.js"></script>
+<script src="https://codesnipps.simolation.com/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+</body>
+</html>

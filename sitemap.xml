@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://codesnipps.simolation.com/post/android/app-shortcuts/</loc>
+    <lastmod>2018-06-07T15:31:13+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://codesnipps.simolation.com/post/android/android-oreo-notification-channel/</loc>
     <lastmod>2018-01-31T18:02:31+01:00</lastmod>
   </url>
@@ -49,13 +54,13 @@
   
   <url>
     <loc>https://codesnipps.simolation.com/</loc>
-    <lastmod>2018-01-31T18:02:31+01:00</lastmod>
+    <lastmod>2018-06-07T15:31:13+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://codesnipps.simolation.com/post/</loc>
-    <lastmod>2018-01-31T18:02:31+01:00</lastmod>
+    <lastmod>2018-06-07T15:31:13+02:00</lastmod>
     <priority>0</priority>
   </url>
   
